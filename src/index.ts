@@ -23,8 +23,13 @@ const bot = new Telegraf<BotContext>(TELEGRAM_BOT_TOKEN || "");
 
 bot.use(userCreator);
 bot.start(async (ctx) => {
-  logger.info(`User ${ctx.from?.id} started the bot.`);
-  await welcomeView(ctx.user!, ctx);
+  try {
+    logger.info(`User ${ctx.from?.id} started the bot.`);
+    await welcomeView(ctx.user!, ctx);
+  } catch (error) {
+    logger.error(`Error in /start command: ${error}`);
+    await ctx.reply("An error occurred while processing your request.");
+  }
 });
 
 const allowedTags = ["crypto", "politics", "sports"];

@@ -9,11 +9,9 @@ import {
 } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
 import { polygon } from "viem/chains";
-import { POLYMARKET_FUNDER_ADDRESS } from "../utils/constants";
+import { POLY_NODE_URL, POLYMARKET_FUNDER_ADDRESS } from "../utils/constants";
 import { toHexString } from "../utils/hex";
 import { BotContext } from "./telegram";
-
-const POLY_NODE_URL = process.env.POLY_NODE_URL || "";
 
 const polygonClient = createWalletClient({
   chain: polygon,
@@ -71,19 +69,23 @@ export async function deposit(ctx: BotContext) {
     await ctx.reply(`The address ${ctx.user.ethAddress} has no balance.`);
     return;
   }
+
   await ctx.reply(
     `Swapping ${String(Number(balance) / 10 ** 18)} POL to USDC\n`
   );
+
   const quote = await getPolyToUsdcQuote(ctx.user.ethAddress, Number(balance));
   if (!quote || !quote.buyAmount) {
     await ctx.reply("Unable to get a quote for the swap.");
     return;
   }
+
   await ctx.reply(
     `You will receive approximately ${String(
       Number(quote?.buyAmount) / 10 ** 6
     )} USDC for your POL.\n`
   );
+
   await approvePolyToUsdcSwap(client, quote);
   await ctx.reply("Approved POL transfer for swap.\n");
 
@@ -107,11 +109,12 @@ export async function deposit(ctx: BotContext) {
     POLYMARKET_FUNDER_ADDRESS,
     BigInt(quote.buyAmount),
   ]);
+
   await ctx.reply(`Depositing USDC to PolyStrategy`);
   await polygonClient.waitForTransactionReceipt({ hash: usdcTransfer });
 }
 
-async function getUserBalance(address: string) {
+export async function getUserBalance(address: string) {
   const _balance = await polygonClient.getBalance({
     address: toHexString(address),
   });

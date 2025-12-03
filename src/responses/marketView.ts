@@ -35,14 +35,17 @@ The list of available markets is below. Press the button to view details and pla
         ),
       ]),
     ];
-    const analysisId = event.series[0]?.id || "";
-    if (analysisId) {
-      inlineKeyboard.unshift([
-        Markup.button.callback(
-          "AI Sentiment Analysis",
-          `analyze_event_${analysisId}`
-        ),
-      ]);
+
+    if (event && event.series && event.series.length > 0) {
+      const analysisId = event.series[0]?.id || "";
+      if (analysisId) {
+        inlineKeyboard.unshift([
+          Markup.button.callback(
+            "AI Sentiment Analysis",
+            `analyze_event_${analysisId}`
+          ),
+        ]);
+      }
     }
     await ctx.reply(text, {
       parse_mode: "HTML",
@@ -50,7 +53,7 @@ The list of available markets is below. Press the button to view details and pla
     });
   } catch (error) {
     console.error("Error sending market view:", error);
-    throw error;
+    await ctx.reply("There was an error displaying the market list.");
   }
 }
 
@@ -72,6 +75,6 @@ export async function marketView(market: PolymarketMarket, ctx: BotContext) {
     });
   } catch (error) {
     console.error("Error sending market view:", error);
-    throw error;
+    await ctx.reply("There was an error displaying the market details.");
   }
 }

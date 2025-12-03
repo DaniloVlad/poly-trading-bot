@@ -2,6 +2,7 @@ export type PolymarketEntityType = "Event" | "Market" | "Series";
 
 export type PolymarketEvent = {
   id: string;
+  slug: string;
   title: string;
   description: string;
   resolutionSource: string;

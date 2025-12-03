@@ -1,3 +1,5 @@
-/search - Search for markets using a common word or phrase
-/trending - Get trending markets (Optionally: pass a keyword filter)
-/account - Create  
+start - View your deposit address and balance
+search - Search for markets using a common word or phrase
+trending - Get trending markets (Optionally: pass a keyword filter)
+url - Get a market or event using it's polymarket url
+fund - Deposit your POL balance into PolyBot trading wallet

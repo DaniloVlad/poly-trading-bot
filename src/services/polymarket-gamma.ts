@@ -30,7 +30,7 @@ type PolymarketUrlResult =
   | { type: "market"; data: PolymarketMarket };
 export async function getFromPolymarketUrl(url: string) {
   try {
-    const re = /polymarket\.com\/markets\/([^\/]+)\/([^\/]+)/;
+    const re = /https:\/\/polymarket\.com\/([^\/]+)\/([^\/]+)/;
     const match = url.match(re);
     if (!match || match.length < 3) {
       throw new Error("Invalid Polymarket URL format.");

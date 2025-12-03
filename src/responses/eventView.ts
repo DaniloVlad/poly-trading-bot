@@ -8,7 +8,7 @@ const eventViewMessage = (events: PolymarketEvent[]) =>
       (event, index) => `${index + 1}. <b>${event.title}</b>
 📊 Volume: $${event.volume}
 ⏰ Ends: ${new Date(event.endDate).toDateString()}
-Open in browser: <a href="https://polymarket.com/event/${event.id}">View</a>`
+Open in browser: <a href="https://polymarket.com/event/${event.slug}">View</a>`
     )
     .join("\n\n");
 
