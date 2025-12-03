@@ -21,3 +21,6 @@ A telegram bot for trading polymarket prediction markets through telegram.
 
 - Trending Markets
   ![Trending Markets](public/trending.png)
+
+- AI analysis of markets
+  ![AI Analysis](public/ai.png)
