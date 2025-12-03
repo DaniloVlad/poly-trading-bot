@@ -37,6 +37,11 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    availableTradingBalance: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+      defaultValue: 0,
+    },
   },
   {
     sequelize: db,

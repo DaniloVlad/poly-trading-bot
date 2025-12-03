@@ -912,3 +912,42 @@
 {"level":"info","message":"Executing (default): SELECT `id`, `telegramId`, `ethPrivateKey`, `ethAddress`, `solPrivateKey`, `solAddress`, `createdAt`, `updatedAt` FROM `users` AS `User` WHERE `User`.`telegramId` = '7162142749' LIMIT 1;","service":"backend-service"}
 {"level":"info","message":"User 7162142749 requested analysis for event 10166.","service":"backend-service"}
 {"level":"info","message":"Fetching comments for Series with ID: 10166","service":"backend-service"}
+{"level":"info","message":"Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'users' AND TABLE_SCHEMA = 'poly_trading_bot'","service":"backend-service"}
+{"level":"info","message":"Executing (default): SHOW INDEX FROM `users` FROM `poly_trading_bot`","service":"backend-service"}
+{"level":"info","message":"Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'user_deposits' AND TABLE_SCHEMA = 'poly_trading_bot'","service":"backend-service"}
+{"level":"info","message":"Executing (default): SHOW INDEX FROM `user_deposits` FROM `poly_trading_bot`","service":"backend-service"}
+{"level":"info","message":"ClobClient API Key: 824e462a-ff3e-6641-50e2-1e330336d9d9","service":"backend-service"}
+{"level":"info","message":"Fetched 0 open orders.","service":"backend-service"}
+{"level":"info","message":"Processing user with Telegram ID: 7162142749","service":"backend-service"}
+{"level":"info","message":"Executing (default): SELECT `id`, `telegramId`, `ethPrivateKey`, `ethAddress`, `solPrivateKey`, `solAddress`, `createdAt`, `updatedAt` FROM `users` AS `User` WHERE `User`.`telegramId` = '7162142749' LIMIT 1;","service":"backend-service"}
+{"level":"info","message":"User 7162142749 requested funding info.","service":"backend-service"}
+{"level":"info","message":"Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'users' AND TABLE_SCHEMA = 'poly_trading_bot'","service":"backend-service"}
+{"level":"info","message":"Executing (default): SHOW INDEX FROM `users` FROM `poly_trading_bot`","service":"backend-service"}
+{"level":"info","message":"Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'user_deposits' AND TABLE_SCHEMA = 'poly_trading_bot'","service":"backend-service"}
+{"level":"info","message":"Executing (default): SHOW INDEX FROM `user_deposits` FROM `poly_trading_bot`","service":"backend-service"}
+{"level":"info","message":"ClobClient API Key: 824e462a-ff3e-6641-50e2-1e330336d9d9","service":"backend-service"}
+{"level":"info","message":"Fetched 0 open orders.","service":"backend-service"}
+{"level":"info","message":"Processing user with Telegram ID: 7162142749","service":"backend-service"}
+{"level":"info","message":"Executing (default): SELECT `id`, `telegramId`, `ethPrivateKey`, `ethAddress`, `solPrivateKey`, `solAddress`, `createdAt`, `updatedAt` FROM `users` AS `User` WHERE `User`.`telegramId` = '7162142749' LIMIT 1;","service":"backend-service"}
+{"level":"info","message":"User 7162142749 requested funding info.","service":"backend-service"}
+{"level":"info","message":"Processing user with Telegram ID: 7162142749","service":"backend-service"}
+{"level":"info","message":"Executing (default): SELECT `id`, `telegramId`, `ethPrivateKey`, `ethAddress`, `solPrivateKey`, `solAddress`, `createdAt`, `updatedAt` FROM `users` AS `User` WHERE `User`.`telegramId` = '7162142749' LIMIT 1;","service":"backend-service"}
+{"level":"info","message":"User 7162142749 requested funding info.","service":"backend-service"}
+{"level":"info","message":"Processing user with Telegram ID: 7162142749","service":"backend-service"}
+{"level":"info","message":"Executing (default): SELECT `id`, `telegramId`, `ethPrivateKey`, `ethAddress`, `solPrivateKey`, `solAddress`, `createdAt`, `updatedAt` FROM `users` AS `User` WHERE `User`.`telegramId` = '7162142749' LIMIT 1;","service":"backend-service"}
+{"level":"info","message":"User 7162142749 requested funding info.","service":"backend-service"}
+{"level":"info","message":"Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'users' AND TABLE_SCHEMA = 'poly_trading_bot'","service":"backend-service"}
+{"level":"info","message":"Executing (default): SHOW INDEX FROM `users` FROM `poly_trading_bot`","service":"backend-service"}
+{"level":"info","message":"Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'user_deposits' AND TABLE_SCHEMA = 'poly_trading_bot'","service":"backend-service"}
+{"level":"info","message":"Executing (default): SHOW INDEX FROM `user_deposits` FROM `poly_trading_bot`","service":"backend-service"}
+{"level":"info","message":"ClobClient API Key: 824e462a-ff3e-6641-50e2-1e330336d9d9","service":"backend-service"}
+{"level":"info","message":"Fetched 0 open orders.","service":"backend-service"}
+{"level":"info","message":"Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'users' AND TABLE_SCHEMA = 'poly_trading_bot'","service":"backend-service"}
+{"level":"info","message":"Executing (default): SHOW INDEX FROM `users` FROM `poly_trading_bot`","service":"backend-service"}
+{"level":"info","message":"Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'user_deposits' AND TABLE_SCHEMA = 'poly_trading_bot'","service":"backend-service"}
+{"level":"info","message":"Executing (default): SHOW INDEX FROM `user_deposits` FROM `poly_trading_bot`","service":"backend-service"}
+{"level":"info","message":"ClobClient API Key: 824e462a-ff3e-6641-50e2-1e330336d9d9","service":"backend-service"}
+{"level":"info","message":"Fetched 0 open orders.","service":"backend-service"}
+{"level":"info","message":"Processing user with Telegram ID: 7162142749","service":"backend-service"}
+{"level":"info","message":"Executing (default): SELECT `id`, `telegramId`, `ethPrivateKey`, `ethAddress`, `solPrivateKey`, `solAddress`, `createdAt`, `updatedAt` FROM `users` AS `User` WHERE `User`.`telegramId` = '7162142749' LIMIT 1;","service":"backend-service"}
+{"level":"info","message":"User 7162142749 requested funding info.","service":"backend-service"}

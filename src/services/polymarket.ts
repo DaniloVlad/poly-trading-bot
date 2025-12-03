@@ -1,12 +1,15 @@
 // ts-ignore
 import { Wallet } from "@ethersproject/wallet";
 import { ClobClient } from "@polymarket/clob-client";
-import { ETH_PRIVATE_KEY } from "../utils/constants";
+import {
+  POLYMARKET_FUNDER_ADDRESS,
+  POLYMARKET_PRIVATE_KEY,
+} from "../utils/constants";
 import { logger } from "../utils/logger";
 
 const host = "https://clob.polymarket.com";
-const funder = "0x479E8252E5Bc43B8b86cbCE2028E312fDbA48f17"; //This is the address listed below your profile picture when using the Polymarket site.
-const signer = new Wallet(ETH_PRIVATE_KEY); //This is your Private Key. If using email login export from https://reveal.magic.link/polymarket otherwise export from your Web3 Application
+const funder = POLYMARKET_FUNDER_ADDRESS; //This is the address listed below your profile picture when using the Polymarket site.
+const signer = new Wallet(POLYMARKET_PRIVATE_KEY); //This is your Private Key. If using email login export from https://reveal.magic.link/polymarket otherwise export from your Web3 Application
 
 console.log(`Signer Address: ${signer.address}`);
 

@@ -25,6 +25,37 @@ export async function searchMarkets(query: string) {
   }
 }
 
+type PolymarketUrlResult =
+  | { type: "event"; data: PolymarketEvent }
+  | { type: "market"; data: PolymarketMarket };
+export async function getFromPolymarketUrl(url: string) {
+  try {
+    const re = /polymarket\.com\/markets\/([^\/]+)\/([^\/]+)/;
+    const match = url.match(re);
+    if (!match || match.length < 3) {
+      throw new Error("Invalid Polymarket URL format.");
+    }
+    const [, type, marketSlug] = match;
+    if (type !== "event" && type !== "market") {
+      throw new Error("URL must point to an event or market.");
+    }
+    const response = await fetch(
+      `${GAMMA_API_URL}/${type}s/slug/${marketSlug}`
+    );
+    if (!response.ok) {
+      throw new Error(`Error fetching ${type}: ${response.statusText}`);
+    }
+    const data = await response.json();
+    return {
+      type,
+      data,
+    } as PolymarketUrlResult;
+  } catch (error) {
+    console.error("Error fetching from Polymarket URL:", error);
+    throw error;
+  }
+}
+
 export async function getTrendingMarkets(
   { tag_slug, offset }: { tag_slug?: string; offset?: number } = { offset: 0 }
 ) {

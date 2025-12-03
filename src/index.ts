@@ -5,9 +5,11 @@ import { eventView } from "./responses/eventView";
 import { marketListView, marketView } from "./responses/marketView";
 import { welcomeView } from "./responses/welcomeView";
 import { generateCommentAnalysis } from "./services/ai";
+import { deposit } from "./services/polygon-router";
 import { getClobClient, getOpenOrders } from "./services/polymarket";
 import {
   getEventById,
+  getFromPolymarketUrl,
   getMarketById,
   getTrendingMarkets,
   searchMarkets,
@@ -47,9 +49,31 @@ bot.command("search", async (ctx) => {
   // await ctx.reply(`Search Results:\n${JSON.stringify(result, null, 2)}`);
 });
 
+bot.command("url", async (ctx) => {
+  const url = ctx.text.replace("/url", "").trim();
+  logger.info(`User ${ctx.from?.id} requested data from URL: ${url}`);
+  try {
+    const result = await getFromPolymarketUrl(url);
+    if (result.type === "event") {
+      await marketListView(result.data as PolymarketEvent, ctx);
+    } else if (result.type === "market") {
+      await marketView(result.data, ctx);
+    }
+  } catch (error) {
+    await ctx.reply(
+      "There was an error processing the URL. Please ensure it is a valid Polymarket event or market URL."
+    );
+  }
+});
+
 bot.command("fund", async (ctx) => {
-  const message = `Funding is currently disabled. Please wait for further updates.`;
-  await ctx.reply(message);
+  if (!ctx.user) {
+    await ctx.reply("User not found. Please start the bot again.");
+    return;
+  }
+  logger.info(`User ${ctx.from?.id} requested funding info.`);
+
+  await deposit(ctx);
 });
 
 bot.action(/trending_page_(.*)/, async (ctx) => {
